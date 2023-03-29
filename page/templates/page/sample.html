@@ -13,11 +13,10 @@
               <span class="section-heading-lower">{{page.title}}</span>
             </h2>
             <div class="section-content">
-              {{page.content}}
-              {%if user.is.authenticated %}
-              <p><a href="{%url 'admin:page_change' page.id%}">Editar</a></p>
+              {{page.content|safe}}
+              {%if user.is_authenticated %}
+              <p><a href="{%url 'admin:page_page_change' page.id%}">Editar</a></p>
               {%endif%}
-              {{user}}
             </div>
           </div>
         </div>
